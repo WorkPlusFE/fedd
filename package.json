@@ -1,0 +1,29 @@
+{
+  "name": "@w6s/fedd",
+  "version": "1.0.0",
+  "description": "Front-end development documentation!",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vuepress dev",
+    "build": "vuepress build",
+    "deploy": "npm run build && ./deploy.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WorkPlusFE/fedd.git"
+  },
+  "keywords": [
+    "front-end",
+    "development",
+    "documentation"
+  ],
+  "author": "Hejx",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WorkPlusFE/fedd/issues"
+  },
+  "homepage": "https://github.com/WorkPlusFE/fedd#readme",
+  "dependencies": {
+    "vuepress": "^1.0.3"
+  }
+}
