@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Front-end development documentation!",
   "main": "index.js",
+  "bin": {
+    "fedd": "bin/fedd"
+  },
   "scripts": {
     "dev": "vuepress dev",
     "build": "vuepress build",
@@ -24,6 +27,13 @@
   },
   "homepage": "https://github.com/WorkPlusFE/fedd#readme",
   "dependencies": {
+    "colors": "^1.4.0",
+    "commander": "^4.0.1",
+    "figlet": "^1.2.4",
+    "inquirer": "^7.0.0",
+    "openurl": "^1.1.1",
+    "ora": "^4.0.3",
+    "request": "^2.88.0",
     "vuepress": "^1.0.3"
   }
 }
