@@ -6,6 +6,9 @@
   "bin": {
     "fedd": "bin/fedd"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "dev": "vuepress dev",
     "build": "vuepress build",
