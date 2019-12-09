@@ -1,0 +1,52 @@
+#!/usr/bin/env node
+
+const program = require('commander');
+const ora = require('ora');
+const colors = require('colors');
+const qrcode = require('qrcode-terminal');
+
+const propmt = require('../lib/propmt');
+const utils = require('../lib/utils');
+
+process.on('exit', function () {
+  console.log();
+});
+
+function openUrlAndExit(url) {
+  require("openurl").open(url);
+  process.exit();
+};
+
+const message = 'Please select a item to open';
+const choices = [{
+  id: 1,
+  name: 'Vue@2.x 全家桶',
+  url: 'https://vuejs.org/'
+}, {
+  id: 2,
+  name: 'Ajax库: axios',
+  url: 'https://github.com/axios/axios',
+}, {
+  id: 3,
+  name: 'PcWeb ui框架: Element-ui',
+  url: 'https://element.eleme.io/',
+}, {
+  id: 4,
+  name: 'H5 ui框架: Vant',
+  url: 'https://github.com/youzan/vant',
+}, {
+  id: 5,
+  name: 'NodeJs 框架: Egg',
+  url: 'https://eggjs.org/',
+}];
+
+console.log('# 主要技术栈');
+console.log('  ----------------------------');
+
+propmt(message, choices)
+  .then(function(answer) {
+    const selected = choices.filter(function(choice) { return choice.name === answer; })[0];
+    if (selected) {
+      utils.openUrlAndExit(selected.url);
+    }
+  });

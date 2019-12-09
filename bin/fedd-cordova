@@ -1,0 +1,45 @@
+#!/usr/bin/env node
+
+const program = require('commander');
+const ora = require('ora');
+const colors = require('colors');
+const qrcode = require('qrcode-terminal');
+
+const propmt = require('../lib/propmt');
+const utils = require('../lib/utils');
+
+process.on('exit', function () {
+  console.log();
+});
+
+function openUrlAndExit(url) {
+  require("openurl").open(url);
+  process.exit();
+};
+
+const message = 'Please select a item to open';
+const choices = [{
+  id: 1,
+  name: 'Cordova 在线 Demo',
+  url: 'https://workplusfe.github.io/codash/#/'
+}, {
+  id: 2,
+  name: 'Cordova 接口文档',
+  url: 'https://workplusfe.github.io/cordova-docs/',
+}];
+
+console.log('# Cordova');
+console.log('  ----------------------------');
+
+propmt(message, choices)
+  .then(function(answer) {
+    const selected = choices.filter(function(choice) { return choice.name === answer; })[0];
+    if (selected) {
+      if (selected.id === 1) {
+        console.log('\n*** Please use WorkPlus scan qrcode to open *** \n');
+        qrcode.generate(selected.url, { small: true });
+        return process.exit();
+      }
+      utils.openUrlAndExit(selected.url);
+    }
+  });

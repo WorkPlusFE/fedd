@@ -1,0 +1,58 @@
+#!/usr/bin/env node
+
+const program = require('commander');
+const ora = require('ora');
+const colors = require('colors');
+const figlet = require('figlet');
+
+const fetchRepos = require('../lib/fetch-repos');
+const propmt = require('../lib/propmt');
+
+process.on('exit', function () {
+  console.log();
+});
+
+console.log();
+
+function openUrlAndExit(url) {
+  require("openurl").open(url);
+  process.exit();
+};
+
+console.log('Welcome to WorkPlusFE, https://github.com/WorkPlusFE'.bgCyan);
+console.log();
+const spinner = ora(`Please wait...`).start();
+
+let repositories;
+fetchRepos()
+  .then(function(repos) {
+    repositories = repos;
+
+    spinner.stop();
+
+    const message = 'Please select a repository to open'; 
+    const choices = repos.map(function(repo) { return repo.name });
+    return propmt(message, choices);
+  })
+  .then(function(repo) {
+    if (repositories && repo) {
+      const selected = repositories.filter(function(repository) { return repository.id === repo; })[0];
+      if (selected.homepage) {
+        propmt('Please select an open URL', ['Github', 'HomePage'])
+          .then(function(answer) {
+            if (answer === 'Github') {
+              openUrlAndExit(selected.html_url);
+            } else {
+              openUrlAndExit(selected.homepage);
+            }
+          });
+      } else {
+        openUrlAndExit(selected.html_url);
+      }
+    }
+  });
+
+
+
+  
+
