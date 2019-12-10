@@ -25,6 +25,7 @@ program
   .command('cordova', 'Show cordova related content')
   .command('weekly', 'List major frameworks and libraries weekly')
   .command('repo', 'List all WorkPlusFE github repositories')
+  .command('template', 'List all WorkPlusFE official templates')
   .parse(process.argv);
 
 

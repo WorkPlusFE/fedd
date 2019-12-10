@@ -14,18 +14,18 @@ process.on('exit', function () {
 });
 
 console.log();
-console.log('Welcome to WorkPlusFE, https://github.com/WorkPlusFE'.bgCyan);
+console.log('Welcome to workplus-templates , https://github.com/workplus-templates'.bgCyan);
 console.log();
 const spinner = ora(`Please wait...`).start();
 
 let repositories;
-fetchRepos('https://api.github.com/users/WorkPlusFE/repos')
+fetchRepos('https://api.github.com/users/workplus-templates/repos')
   .then(function(repos) {
     repositories = repos;
 
     spinner.stop();
 
-    const message = 'Please select a repository to open'; 
+    const message = 'Please select a template to open'; 
     const choices = repos.map(function(repo) { return repo.name });
     return propmt(message, choices);
   })

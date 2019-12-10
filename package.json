@@ -1,6 +1,6 @@
 {
   "name": "@w6s/fedd",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Front-end development documentation!",
   "main": "index.js",
   "bin": {
