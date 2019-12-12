@@ -39,9 +39,13 @@ const choices = [{
   name: 'Sentry 日志收集平台',
   url: 'http://121.40.128.155:8080/sentry/',
 }, {
-  id: 5,
+  id: 6,
   name: '249 内网资源共享服务器',
   url: 'smb://172.16.1.249/share/',
+}, {
+  id: 7,
+  name: 'Redmine bug 管理平台',
+  url: 'http://redmine.foreverht.com/',
 }];
 
 console.log('# 开发常用服务及工具');
