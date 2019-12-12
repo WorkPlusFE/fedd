@@ -20,6 +20,7 @@ if (process.argv.length < 3) {
 program
   .version(require('../package').version)
   .usage('<command> [options]')
+  .command('dev', 'List common development tools or URLs')
   .command('stack', 'List front-end technology stacks')
   .command('standard', 'List front-end development standard')
   .command('cordova', 'Show cordova related content')
