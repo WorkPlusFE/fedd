@@ -1,6 +1,6 @@
 {
   "name": "@w6s/fedd",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Front-end development CLI documentation!",
   "bin": {
     "fedd": "bin/fedd"

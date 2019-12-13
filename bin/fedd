@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const program = require('commander');
 const colors = require('colors');
+const version = require('../package').version;
 
 process.on('exit', function () {
   console.log();
@@ -8,12 +9,12 @@ process.on('exit', function () {
 
 if (process.argv.length < 3) {
   console.log();
-  console.log('# Welcome to WorkPlusFE development CLI documentation'.bgCyan);
+  console.log(`# WorkPlusFE development CLI documentation v${version}`);
   console.log();
 }
 
 program
-  .version(require('../package').version)
+  .version(version)
   .usage('<command> [options]')
   .command('dev', 'List common development tools or URLs')
   .command('stack', 'List front-end technology stacks')

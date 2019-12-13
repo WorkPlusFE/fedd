@@ -11,7 +11,7 @@ process.on('exit', function () {
 });
 
 console.log();
-console.log('Welcome to WorkPlusFE, https://github.com/WorkPlusFE'.bgBlue);
+console.log('Welcome to WorkPlusFE, see more https://github.com/WorkPlusFE'.blue);
 console.log();
 const spinner = ora(`Please wait...`).start();
 
