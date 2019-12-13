@@ -1,4 +1,4 @@
-# FEDD
+# FEDD [![npm version](https://badge.fury.io/js/%40w6s%2Ffedd.svg)](https://badge.fury.io/js/%40w6s%2Ffedd)
 
 > WorkPlusFE development CLI documentation.
 
