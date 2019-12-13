@@ -1,12 +1,9 @@
 #!/usr/bin/env node
-
-const program = require('commander');
 const ora = require('ora');
 const colors = require('colors');
-const figlet = require('figlet');
 
 const fetchRepos = require('../lib/fetch-repos');
-const propmt = require('../lib/propmt');
+const prompt = require('../lib/prompt');
 const utils = require('../lib/utils');
 
 process.on('exit', function () {
@@ -14,8 +11,16 @@ process.on('exit', function () {
 });
 
 console.log();
-console.log('Welcome to workplus-templates , https://github.com/workplus-templates'.bgCyan);
+console.log('Welcome to workplus-templates , https://github.com/workplus-templates'.bgBlue);
 console.log();
+console.log('================== How to use? =======================');
+console.log('# npm install -g workplus-cli')
+console.log('# wp start <template-name> <project-name>')
+console.log()
+console.log('See more https://github.com/WorkPlusFE/WorkPlus-cli')
+console.log('======================================================');
+console.log();
+
 const spinner = ora(`Please wait...`).start();
 
 let repositories;
@@ -27,13 +32,13 @@ fetchRepos('https://api.github.com/users/workplus-templates/repos')
 
     const message = 'Please select a template to open'; 
     const choices = repos.map(function(repo) { return repo.name });
-    return propmt(message, choices);
+    return prompt(message, choices);
   })
   .then(function(repo) {
     if (repositories && repo) {
       const selected = repositories.filter(function(repository) { return repository.id === repo; })[0];
       if (selected.homepage) {
-        propmt('Please select an open URL', ['Github', 'HomePage'])
+        prompt('Please select an open URL', ['Github', 'HomePage'])
           .then(function(answer) {
             if (answer === 'Github') {
               utils.openUrlAndExit(selected.html_url);

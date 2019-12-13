@@ -1,49 +1,19 @@
 #!/usr/bin/env node
-
-const program = require('commander');
-const ora = require('ora');
-const colors = require('colors');
-const qrcode = require('qrcode-terminal');
-
-const propmt = require('../lib/propmt');
+const prompt = require('../lib/prompt');
 const utils = require('../lib/utils');
+const promptData = require('../prompt').data;
 
 process.on('exit', function () {
   console.log();
 });
 
-function openUrlAndExit(url) {
-  require("openurl").open(url);
-  process.exit();
-};
-
 const message = 'Please select a item to open';
-const choices = [{
-  id: 1,
-  name: 'JavaScript 风格指南',
-  url: 'https://lin-123.github.io/javascript/'
-}, {
-  id: 2,
-  name: 'CSS 编写指南',
-  url: 'https://github.com/WorkPlusFE/css-style-guide',
-}, {
-  id: 3,
-  name: 'HTML 编码规范',
-  url: 'https://github.com/WorkPlusFE/html-guide',
-}, {
-  id: 4,
-  name: 'Vuejs 官方风格指南',
-  url: 'https://cn.vuejs.org/v2/style-guide/',
-}, {
-  id: 5,
-  name: '仓库代码提交规范',
-  url: 'https://www.conventionalcommits.org/zh-hans/v1.0.0-beta.4/',
-}];
+const choices = promptData.standard;
 
 console.log('# 约定规范');
 console.log('  ----------------------------');
 
-propmt(message, choices)
+prompt(message, choices)
   .then(function(answer) {
     const selected = choices.filter(function(choice) { return choice.name === answer; })[0];
     if (selected) {

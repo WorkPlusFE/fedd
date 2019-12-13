@@ -1,37 +1,21 @@
 #!/usr/bin/env node
-
-const program = require('commander');
-const ora = require('ora');
-const colors = require('colors');
 const qrcode = require('qrcode-terminal');
 
-const propmt = require('../lib/propmt');
+const prompt = require('../lib/prompt');
 const utils = require('../lib/utils');
+const promptData = require('../prompt').data;
 
 process.on('exit', function () {
   console.log();
 });
 
-function openUrlAndExit(url) {
-  require("openurl").open(url);
-  process.exit();
-};
-
 const message = 'Please select a item to open';
-const choices = [{
-  id: 1,
-  name: 'Cordova 在线 Demo',
-  url: 'https://workplusfe.github.io/codash/#/'
-}, {
-  id: 2,
-  name: 'Cordova 接口文档',
-  url: 'https://workplusfe.github.io/cordova-docs/',
-}];
+const choices = promptData.cordova;
 
 console.log('# Cordova');
 console.log('  ----------------------------');
 
-propmt(message, choices)
+prompt(message, choices)
   .then(function(answer) {
     const selected = choices.filter(function(choice) { return choice.name === answer; })[0];
     if (selected) {

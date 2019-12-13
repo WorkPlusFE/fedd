@@ -1,49 +1,19 @@
 #!/usr/bin/env node
-
-const program = require('commander');
-const ora = require('ora');
-const colors = require('colors');
-const qrcode = require('qrcode-terminal');
-
-const propmt = require('../lib/propmt');
+const prompt = require('../lib/prompt');
 const utils = require('../lib/utils');
+const promptData = require('../prompt').data;
 
 process.on('exit', function () {
   console.log();
 });
 
-function openUrlAndExit(url) {
-  require("openurl").open(url);
-  process.exit();
-};
-
 const message = 'Please select a item to open';
-const choices = [{
-  id: 1,
-  name: 'Vuejs News',
-  url: 'https://news.vuejs.org/'
-}, {
-  id: 2,
-  name: 'React Status',
-  url: 'https://react.statuscode.com/latest',
-}, {
-  id: 3,
-  name: 'Node Weekly',
-  url: 'https://nodeweekly.com/latest',
-}, {
-  id: 4,
-  name: 'JavaScript Weekly',
-  url: 'https://javascriptweekly.com/latest',
-}, {
-  id: 5,
-  name: 'Frontend Focus',
-  url: 'https://frontendfoc.us/latest',
-}];
+const choices = promptData.weekly;
 
 console.log('# Weekly');
 console.log('  ----------------------------');
 
-propmt(message, choices)
+prompt(message, choices)
   .then(function(answer) {
     const selected = choices.filter(function(choice) { return choice.name === answer; })[0];
     if (selected) {

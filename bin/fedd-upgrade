@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+const ora = require('ora');
+const colors = require('colors');
+const syncPromptData = require('../lib/sync-prompt-data');
+
+process.on('exit', function () {
+  console.log();
+});
+
+function exitAndLog(log) {
+  console.log(log);
+  process.exit();
+};
+
+console.log();
+const spinner = ora(`Updating, please wait...`).start();
+syncPromptData(function(err) {
+  spinner.stop();
+  console.log(err);
+  exitAndLog('\n Update failed, please try again or contact the developer!'.red);
+}, function() {
+  spinner.stop();
+  exitAndLog(' Update completed!'.green);
+});

@@ -1,8 +1,7 @@
 {
   "name": "@w6s/fedd",
-  "version": "1.3.1",
+  "version": "1.4.0",
   "description": "Front-end development CLI documentation!",
-  "main": "index.js",
   "bin": {
     "fedd": "bin/fedd"
   },
@@ -29,6 +28,7 @@
     "colors": "^1.4.0",
     "commander": "^4.0.1",
     "figlet": "^1.2.4",
+    "github-content": "^1.0.1",
     "inquirer": "^7.0.0",
     "openurl": "^1.1.1",
     "ora": "^4.0.3",

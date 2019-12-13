@@ -1,7 +1,6 @@
 #!/usr/bin/env node
-
 const program = require('commander');
-const figlet = require('figlet');
+const colors = require('colors');
 
 process.on('exit', function () {
   console.log();
@@ -9,11 +8,7 @@ process.on('exit', function () {
 
 if (process.argv.length < 3) {
   console.log();
-  console.log(figlet.textSync('fedd', {
-    font: 'Ghost',
-    horizontalLayout: 'default',
-    verticalLayout: 'default'
-  }));
+  console.log('# Welcome to WorkPlusFE development CLI documentation'.bgCyan);
   console.log();
 }
 
@@ -27,6 +22,7 @@ program
   .command('weekly', 'List major frameworks and libraries weekly')
   .command('repo', 'List all WorkPlusFE github repositories')
   .command('template', 'List all WorkPlusFE official templates')
+  .command('upgrade', 'Update prompt data')
   .parse(process.argv);
 
 

@@ -1,57 +1,19 @@
 #!/usr/bin/env node
-
-const program = require('commander');
-const ora = require('ora');
-const colors = require('colors');
-const qrcode = require('qrcode-terminal');
-
-const propmt = require('../lib/propmt');
+const prompt = require('../lib/prompt');
 const utils = require('../lib/utils');
+const promptData = require('../prompt').data;
 
 process.on('exit', function () {
   console.log();
 });
 
-function openUrlAndExit(url) {
-  require("openurl").open(url);
-  process.exit();
-};
-
 const message = 'Please select a item to open';
-const choices = [{
-  id: 1,
-  name: '高科提测平台',
-  url: 'http://tp.foreverht.com:9000/'
-}, {
-  id: 2,
-  name: '高科通用公开服务一览表',
-  url: 'http://workplus.tk/',
-}, {
-  id: 3,
-  name: 'CI 持续构建平台',
-  url: 'http://ci.workplus.tk/',
-}, {
-  id: 4,
-  name: 'Iconfont-阿里巴巴矢量图标库',
-  url: 'https://www.iconfont.cn/',
-}, {
-  id: 5,
-  name: 'Sentry 日志收集平台',
-  url: 'http://121.40.128.155:8080/sentry/',
-}, {
-  id: 6,
-  name: '249 内网资源共享服务器',
-  url: 'smb://172.16.1.249/share/',
-}, {
-  id: 7,
-  name: 'Redmine bug 管理平台',
-  url: 'http://redmine.foreverht.com/',
-}];
+const choices = promptData.dev;
 
 console.log('# 开发常用服务及工具');
 console.log('  ----------------------------');
 
-propmt(message, choices)
+prompt(message, choices)
   .then(function(answer) {
     const selected = choices.filter(function(choice) { return choice.name === answer; })[0];
     if (selected) {

@@ -1,0 +1,105 @@
+{
+  "data": {
+    "cordova": [{
+      "id": 1,
+      "name": "Cordova 在线 Demo",
+      "url": "https://workplusfe.github.io/codash/#/"
+    }, {
+      "id": 2,
+      "name": "Cordova 接口文档",
+      "url": "https://workplusfe.github.io/cordova-docs/"
+    }],
+    "weekly": [{
+      "id": 1,
+      "name": "Vuejs News",
+      "url": "https://news.vuejs.org/"
+    }, {
+      "id": 2,
+      "name": "React Status",
+      "url": "https://react.statuscode.com/latest"
+    }, {
+      "id": 3,
+      "name": "Node Weekly",
+      "url": "https://nodeweekly.com/latest"
+    }, {
+      "id": 4,
+      "name": "JavaScript Weekly",
+      "url": "https://javascriptweekly.com/latest"
+    }, {
+      "id": 5,
+      "name": "Frontend Focus",
+      "url": "https://frontendfoc.us/latest"
+    }],
+    "dev": [{
+      "id": 1,
+      "name": "高科提测平台",
+      "url": "http://tp.foreverht.com:9000/"
+    }, {
+      "id": 2,
+      "name": "高科通用公开服务一览表",
+      "url": "http://workplus.tk/"
+    }, {
+      "id": 3,
+      "name": "CI 持续构建平台",
+      "url": "http://ci.workplus.tk/"
+    }, {
+      "id": 4,
+      "name": "Iconfont-阿里巴巴矢量图标库",
+      "url": "https://www.iconfont.cn/"
+    }, {
+      "id": 5,
+      "name": "Sentry 日志收集平台",
+      "url": "http://121.40.128.155:8080/sentry/"
+    }, {
+      "id": 6,
+      "name": "249 内网资源共享服务器",
+      "url": "smb://172.16.1.249/share/"
+    }, {
+      "id": 7,
+      "name": "Redmine bug 管理平台",
+      "url": "http://redmine.foreverht.com/"
+    }],
+    "stack": [{
+      "id": 1,
+      "name": "Vue@2.x 全家桶",
+      "url": "https://vuejs.org/"
+    }, {
+      "id": 2,
+      "name": "Ajax库: axios",
+      "url": "https://github.com/axios/axios"
+    }, {
+      "id": 3,
+      "name": "PcWeb ui框架: Element-ui",
+      "url": "https://element.eleme.io/"
+    }, {
+      "id": 4,
+      "name": "H5 ui框架: Vant",
+      "url": "https://github.com/youzan/vant"
+    }, {
+      "id": 5,
+      "name": "NodeJs 框架: Egg",
+      "url": "https://eggjs.org/"
+    }],
+    "standard": [{
+      "id": 1,
+      "name": "JavaScript 风格指南",
+      "url": "https://lin-123.github.io/javascript/"
+    }, {
+      "id": 2,
+      "name": "CSS 编写指南",
+      "url": "https://github.com/WorkPlusFE/css-style-guide"
+    }, {
+      "id": 3,
+      "name": "HTML 编码规范",
+      "url": "https://github.com/WorkPlusFE/html-guide"
+    }, {
+      "id": 4,
+      "name": "Vuejs 官方风格指南",
+      "url": "https://cn.vuejs.org/v2/style-guide/"
+    }, {
+      "id": 5,
+      "name": "仓库代码提交规范",
+      "url": "https://www.conventionalcommits.org/zh-hans/v1.0.0-beta.4/"
+    }]
+  }
+}
