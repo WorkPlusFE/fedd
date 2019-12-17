@@ -58,6 +58,10 @@
       "id": 7,
       "name": "Redmine bug 管理平台",
       "url": "http://redmine.foreverht.com/"
+    }, {
+      "id": 8,
+      "name": "NPM Version Badge",
+      "url": "https://badge.fury.io/"
     }],
     "stack": [{
       "id": 1,
